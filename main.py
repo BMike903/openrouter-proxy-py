@@ -5,6 +5,7 @@ from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import httpx
+import uvicorn
 
 load_dotenv()
 
@@ -52,3 +53,8 @@ async def message(request: Request):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
