@@ -12,7 +12,6 @@ ALLOWED_ORIGINS = [
     "https://bmike903.github.io",
 ]
 
-TRUSTED_CLIENT_TOKEN = os.getenv("TRUSTED_CLIENT_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 app = FastAPI()
